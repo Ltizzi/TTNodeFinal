@@ -8,8 +8,8 @@ async function getProductById(id) {
   return await productModel.getProductById(id);
 }
 
-async function getProductByName(name) {
-  return await productModel.getProductByName(name);
+async function getProductByTitle(name) {
+  return await productModel.getProductByTitle(name);
 }
 
 async function getProductsByArtist(artist) {
@@ -31,7 +31,7 @@ async function deleteProductById(id) {
 export const prodService = {
   getAllProducts,
   getProductById,
-  getProductByName,
+  getProductByTitle,
   getProductsByArtist,
   saveProduct,
   updatedProduct,

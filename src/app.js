@@ -2,6 +2,8 @@ import express from "express";
 import productRouter from "./routes/products.routes.js";
 import bodyParser from "body-parser";
 import cors from "cors";
+import "dotenv/config";
+//import { importData } from "./data/importData.js";
 
 const app = express();
 
@@ -9,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: process.env.CORS_ORIGINS,
     methods: ["GET", "POST", "PATCH", "PULL", "DELETE"],
   })
 );
@@ -23,12 +25,11 @@ app.use((req, res, next) => {
 
 app.use("/products", productRouter);
 
+//este endpoint fue utilizado para importar la base de datos de un json a firestore
+//app.get("/import", importData);
+
 app.use((req, res) => {
   res.status(404).json({ message: "Invalid route" });
-});
-
-app.get("/", (_req, res) => {
-  res.send("Hola Mundo desde Express + JavaScript");
 });
 
 export default app;

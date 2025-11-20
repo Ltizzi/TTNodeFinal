@@ -12,9 +12,10 @@ import {
 const router = express.Router();
 
 router.get("/", httpGetAllProducts);
-router.get("/:id", httpGetProductById);
 router.get("/byArtist", httpGetProductsByArtist);
-router.get("/byName", httpGetProductByName);
+router.get("/byTitle", httpGetProductByName);
+router.get("/:id", httpGetProductById);
+
 router.post("/create", httpCreateProduct);
 router.delete("/:id", httpDeleteProduct);
 router.patch("/:id", httpUpdateProduct);

@@ -12,27 +12,26 @@ async function getProductsByArtist(artist) {
   return await dbCalls.getDocByFilter("products", "artist", artist);
 }
 
-async function getProductByName(name) {
-  return await dbCalls.getDocByFilter("products", "name", name);
+async function getProductByTitle(name) {
+  return await dbCalls.getDocByFilter("products", "title", name);
 }
 
 async function saveProduct(product) {
-  const res = await dbCalls.saveDoc("products", product);
-  return { id: res.id, ...res.data() };
+  return await dbCalls.saveDocument("products", product);
 }
 
 async function updateProduct(id, updatedProduct) {
-  return await dbCalls.updateDoc("products", id, updatedProduct);
+  return await dbCalls.updateDocument("products", id, updatedProduct);
 }
 
 async function deleteProduct(id) {
-  return await dbCalls.deleteDoc("products", id);
+  return await dbCalls.deleteDocument("products", id);
 }
 
 export const productModel = {
   getProducts,
   getProductById,
-  getProductByName,
+  getProductByTitle,
   getProductsByArtist,
   saveProduct,
   updateProduct,
