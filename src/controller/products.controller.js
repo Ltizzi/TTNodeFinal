@@ -12,7 +12,6 @@ export async function httpGetAllProducts(req, res) {
 export async function httpGetProductById(req, res) {
   try {
     const { id } = req.params;
-    console.log(id);
     const product = await prodService.getProductById(id);
     return res.status(200).json(product);
   } catch (err) {
