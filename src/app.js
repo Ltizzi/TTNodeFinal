@@ -30,7 +30,31 @@ app.use("/products", productRouter);
 //app.get("/import", importData);
 
 app.use((req, res) => {
-  res.status(404).json("<h1>INVALID ROUTE!</h1>");
+  res.status(404).send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>404</title>
+      <style>
+        body {
+          margin: 0;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #000;
+          color: #00ff00;
+          font-family: monospace;
+          font-size: 3rem;
+        }
+      </style>
+    </head>
+    <body>
+      INVALID ROUTE!
+    </body>
+    </html>
+  `);
 });
 
 export default app;
