@@ -4,7 +4,7 @@ API desarrollada en Node.js / Express para un E-commerce de venta de álbumes mu
 
 ## **IMPORTANTE**
 
-El proyecto necesita un archivo .env en la raíz del proyecto con las siguientes variables que necesitan ser rellenadas con la información de acceso de Firebase, la secret key para el JWT y el puerto de la API/rutas permitidas para Cors:
+El proyecto necesita un archivo .env (que fue añadido a .gitignore por una cuestión de seguridad) en la raíz del proyecto con las siguientes variables que necesitan ser rellenadas con la información de acceso de Firebase, la secret key para el JWT y el puerto de la API/rutas permitidas para Cors:
 
 ```
   FIREBASE_API_KEY=
@@ -56,9 +56,11 @@ npm run start
 
 ## Ejemplo de Objeto Product
 
+NOTA: el "id" para objetos nuevos es definido por la API.
+
 ```
 {
-  "id": 1,
+  "id": 12624642,
   "artist": "Radiohead",
   "title": "The Interview",
   "releaseDate": "2010-08-23",
