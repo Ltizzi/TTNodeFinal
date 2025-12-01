@@ -30,7 +30,7 @@ app.use("/products", productRouter);
 //app.get("/import", importData);
 
 app.use((req, res) => {
-  res.status(404).json({ message: "Invalid route" });
+  res.status(404).json("<h1>INVALID ROUTE!</h1>");
 });
 
 export default app;
