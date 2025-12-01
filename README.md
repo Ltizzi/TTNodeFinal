@@ -2,6 +2,23 @@
 
 API desarrollada en Node.js / Express para un E-commerce de venta de álbumes musicales. Utiliza Firestore (Firebase) como base de datos y JWT para autenticación y autorización.
 
+## **IMPORTANTE**
+
+El proyecto necesita un archivo .env en la raíz del proyecto con las siguientes variables que necesitan ser rellenadas con la información de acceso de Firebase, la secret key para el JWT y el puerto de la API/rutas permitidas para Cors:
+
+```
+  FIREBASE_API_KEY=
+  FIREBASE_AUTH_DOMAIN=
+  FIREBASE_STORAGE_BUCKET=
+  FIREBASE_APP_ID=
+
+  API_PORT=
+  CORS_ORIGINS=
+
+  JWT_SECRET_KEY=
+
+```
+
 ---
 
 ## Usuarios Hardcodeados
