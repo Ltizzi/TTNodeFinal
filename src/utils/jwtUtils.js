@@ -10,7 +10,8 @@ export function generateToken(user) {
   return jwt.sign(tokenData, secret, expiration);
 }
 
-export function isAuth(req, res, next) {
+//Para Authentication
+export function authenticate(req, res, next) {
   const token = getToken(req);
   if (!token) return res.status(401).json({ error: "Invalid token" });
 
@@ -20,6 +21,7 @@ export function isAuth(req, res, next) {
   });
 }
 
+//Para Authorization
 export function isAdmin(req, res, next) {
   const token = getToken(req);
   if (!token) return res.status(401).json({ error: "Invalid token" });

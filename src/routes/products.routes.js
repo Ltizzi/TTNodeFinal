@@ -8,17 +8,17 @@ import {
   httpGetProductsByArtist,
   httpUpdateProduct,
 } from "../controller/products.controller.js";
-import { isAdmin, isAuth } from "../utils/jwtUtils.js";
+import { isAdmin, authenticate } from "../utils/jwtUtils.js";
 
 const router = express.Router();
 
-router.get("/", isAuth, httpGetAllProducts);
-router.get("/byArtist", isAuth, httpGetProductsByArtist);
-router.get("/byTitle", isAuth, httpGetProductByName);
-router.get("/:id", isAuth, httpGetProductById);
+router.get("/", authenticate, httpGetAllProducts);
+router.get("/byArtist", authenticate, httpGetProductsByArtist);
+router.get("/byTitle", authenticate, httpGetProductByName);
+router.get("/:id", authenticate, httpGetProductById);
 
-router.post("/create", isAuth, isAdmin, httpCreateProduct);
-router.delete("/:id", isAuth, isAdmin, httpDeleteProduct);
-router.patch("/:id", isAuth, isAdmin, httpUpdateProduct);
+router.post("/create", authenticate, isAdmin, httpCreateProduct);
+router.delete("/:id", authenticate, isAdmin, httpDeleteProduct);
+router.patch("/:id", authenticate, isAdmin, httpUpdateProduct);
 
 export default router;
